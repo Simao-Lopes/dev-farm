@@ -1,0 +1,19 @@
+worker-result.example.json — the contract workers write back to the coordinator.
+Copy as worker-result.json inside a job output dir. Validate with: python3 -m json.tool.
+
+{
+  "job_id": "job_20260821_0942",
+  "node": "ios-worker",
+  "ref": "refs/heads/feature/signin-screen",
+  "platform": "ios",
+  "status": "pass",
+  "steps": ["build", "unit-test", "ui-test"],
+  "artifacts": [
+    { "type": "xcarchive", "path": "~/devfarm/out/app.xcarchive" },
+    { "type": "log", "path": "/var/log/devfarm/ios/build.log" }
+  ],
+  "fail_reason": null,
+  "duration_s": 214,
+  "summary": "All 41 tests passed; app boots on iPhone 16 simulator.",
+  "captured_at": "2026-08-21T09:45:12Z"
+}

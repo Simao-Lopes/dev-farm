@@ -1,0 +1,19 @@
+# openhands-env.example — copy to ~/.openhands/.env and fill real values. NEVER commit.
+# This env is what OpenHands passes to the agent loop on Mac-H.
+
+# --- LLM provider (cloud brain). Use ONE primary + one fallback.
+LLM_MODEL=claude-sonnet-4-5          # or openai/gpt-4.1, deepseek, etc.
+LLM_API_KEY_FILE=~/.devfarm/llm.key   # read the secret from this (populated from Keychain)
+# Anthropic
+# LLM_PROVIDER=anthropic
+# OpenRouter (fallback/aggregator)
+LLM_PROVIDER=openrouter
+LLM_BASE_URL=https://openrouter.ai/api/v1
+
+# --- Coordinator the agent talks to after coding (on Mac-H)
+COORDINATOR_URL=http://127.0.0.1:8410
+# Only for SAMPLES — the real shared token is generated per-run, never stored here.
+# COORDINATOR_TOKEN=__REPLACE_ME__
+
+# --- Repo the agent operates on
+GIT_ORIGIN=gitserver:/~/repos/company.git   # tailnet git path

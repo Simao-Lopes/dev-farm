@@ -1,0 +1,43 @@
+{
+  "acls": [
+    {
+      "action": "accept",
+      "src": ["team-eng@acme.com"],
+      "dst": ["tag:harness:443", "tag:harness:3000"]
+    },
+    {
+      "action": "accept",
+      "src": ["tag:harness"],
+      "dst": [
+        "tag:harness",
+        "tag:ios-worker:22",
+        "tag:and-worker:22",
+        "tag:ios-worker:8411",
+        "tag:and-worker:8412"
+      ]
+    },
+    {
+      "action": "accept",
+      "src": ["tag:ios-worker"],
+      "dst": ["tag:harness:8410"]
+    },
+    {
+      "action": "accept",
+      "src": ["tag:and-worker"],
+      "dst": ["tag:harness:8410"]
+    }
+  ],
+  "tagOwners": {
+    "tag:harness": ["admin@acme.com"],
+    "tag:ios-worker": ["admin@acme.com"],
+    "tag:and-worker": ["admin@acme.com"]
+  },
+  "ssh": [
+    {
+      "action": "accept",
+      "src": ["tag:harness"],
+      "dst": ["tag:ios-worker", "tag:and-worker"],
+      "users": ["ubuntu"]
+    }
+  ]
+}
