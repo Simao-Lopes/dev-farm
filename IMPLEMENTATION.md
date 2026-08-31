@@ -15,9 +15,9 @@
 2. Sign in with the company identity: `tailscale up` (or open the app → sign in).
 3. On Mac-H: `tailscale up --advertise-tags=tag:harness --accept-routes` and make it exit-node
    if you want internet routing for workers.
-4. Name nodes: `harns`, `ios-worker`, `and-worker`.
+4. Name nodes: `pod_00` (harns), `pod_01` (android), `pod_02` (ios).
 5. Create an **ACL file** (see `TEMPLATES/tailnet-acl.example.json`): allow
-   `harns → ios-worker, and-worker` on ports 22 + 8411/8412; team users → `harns:3000`.
+   `pod_00 → pod_01, pod_02` on ports 22 + 8411/8412; team users → `pod_00:3000`.
 6. Verify: `tailscale status` shows all three; ping each.
 
 ## Phase 2 — Mac-H: browser door + brain (90 min)

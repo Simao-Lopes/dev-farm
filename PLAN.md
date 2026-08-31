@@ -9,9 +9,9 @@ removes the managed-cloud dependency — while keeping the team UX (request → 
 
 | Node | Role | Responsibilities |
 |---|---|---|
-| **Mac-H (HARNS)** | Orchestrator + Brain + Browser door | OpenHands (browser UI), Claude Code/Codex as LLM driver, repo origin/clones, task queue, credential vault, Tailscale host **and** exits |
-| **Mac-I (IOS)** | iOS build/test worker | Xcode, iOS Simulator, physical-device provisioning, TestFlight build+upload, signing certs |
-| **Mac-A (AND)** | Android build/test worker | Android Studio, AVD emulators, Gradle builds, APK/AAB signing, real-device loops |
+| **pod_00 (Mac-H, HARNS)** | Orchestrator + Brain + Browser door | OpenHands (browser UI), Claude Code/Codex as LLM driver, repo origin/clones, task queue, credential vault, Tailscale host **and** exit node |
+| **pod_02 (Mac-I, IOS)** | iOS build/test worker | Xcode, iOS Simulator, physical-device provisioning, TestFlight build+upload, signing certs |
+| **pod_01 (Mac-A, AND)** | Android build/test worker | Android Studio, AVD emulators, Gradle builds, APK/AAB signing, real-device loops |
 
 > Roles are **decoupled by SSH + git + Tailscale**, not by shared filesystem. Each node can
 > be replaced by a sibling Mac with no leader reconfiguration (the coordinator talks to

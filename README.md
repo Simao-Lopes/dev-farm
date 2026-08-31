@@ -1,9 +1,15 @@
-# Self-Hosted Devin-Style Agent Farm on 3 Macs
+# Self-Hosted Devin-Style Code-Pod Farm on 3 Macs
 
-**Company-internal blueprint — private.** Replaces managed Devin with a self-hosted,
+**Public repo.** Clone on any of the 3 Macs to provision your pods. Self-hosted,
 browser-based coding-agent platform running entirely on **3 macOS laptops**, behind a
 **Tailscale VPN**, with a **Claude/Codex brain** and **dedicated iOS + Android build/test
 workers**.
+
+| Pod | Mac | Role |
+|---|---|---|
+| **pod_00** | Mac-H (HARNS) | Orchestrator + Brain + Browser door (OpenHands) |
+| **pod_01** | Mac-A (AND) | Android build/test worker |
+| **pod_02** | Mac-I (IOS) | iOS build/test worker |
 
 ---
 
